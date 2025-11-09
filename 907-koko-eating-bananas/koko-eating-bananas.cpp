@@ -10,11 +10,9 @@ public:
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             long long psum = 0;
-            cout << "lo = " << lo << endl;
-            cout << "hi = " << hi << endl;
-            cout << "mid = " << mid << endl;
+           
             for (int i : piles) {
-                // cout<<i<<" "<<" "<<mid<<" "<<ceil((double)i/mid)<<endl;
+               
                 psum += ceil((double)i / mid);
             }
             cout << psum << " " << mid << endl;
