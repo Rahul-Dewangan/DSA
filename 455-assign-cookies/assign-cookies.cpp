@@ -3,7 +3,7 @@ public:
     int findContentChildren(vector<int>& g, vector<int>& s) {
         sort(g.begin(), g.end());
         sort(s.begin(), s.end());
-
+    
         for(int i: g) cout<<i<<" ";
         cout<<endl;
         for(int i: s) cout<<i<<" ";
