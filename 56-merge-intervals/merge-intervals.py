@@ -5,9 +5,9 @@ class Solution:
         ans.append(intervals[0])
 
         for i in intervals:
-            if ans[len(ans)-1][1] >= i[0]:
-                if  ans[len(ans)-1][1] <= i[1]:
-                    ans[len(ans)-1][1] = i[1]
+            if ans[-1][1] >= i[0]:
+                if  ans[-1][1] <= i[1]:
+                    ans[-1][1] = i[1]
             else:
                 ans.append(i)
         
