@@ -6,20 +6,16 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        queue = []
-        
-        def ino(root):
-            if root.left:
-                ino(root.left)
-
-            queue.append(root.val)
-            if root.right:
-                ino(root.right)
-            
-        ino(root)
-        for i in range(0, len(queue)-1):
-            if queue[i] >= queue[i+1]:
+        def helpfun(li, ri, root):
+            if not root:
+                return True
+                
+            if li>=root.val:
                 return False
+            if ri<=root.val:
+                return False
+
+            return helpfun(li, root.val, root.left) and helpfun(root.val, ri, root.right)
+            
         
-        print(queue)
-        return True
+        return helpfun(float('-inf'), float('inf'), root)
